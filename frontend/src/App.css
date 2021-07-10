@@ -1,0 +1,52 @@
+input {
+  border-width: 1px;
+}
+
+.errorText {
+  color: red;
+  text-align: center;
+}
+
+.readOnlyInput {
+  background-color: white;
+  border-color: rgb(200, 200, 200);
+  color: black;
+}
+
+.tempButton {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: .25rem;
+  color: white;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-top: 10px;
+  padding: .375rem .75rem;
+  text-align: center;
+  width: 60px;
+}
+
+.tempButton:hover {
+  cursor: pointer;
+}
+
+.tempCard {
+  background-color: whitesmoke;
+  margin: auto;
+  margin-top: 40px;
+  padding: 16px;
+  width: 60%;
+}
+
+.tempTable {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.tempTable td {
+  width: 50%;
+}
+
+.tempTable input {
+  width: 100%;
+}
