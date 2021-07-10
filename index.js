@@ -57,7 +57,17 @@ function mode(array) {
     return largest;
 }
 
-app.get('/', async (req, res) => {
+// serve the compiled react app. intended for production. 
+if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
+    app.use(express.static(__dirname, "../frontend/build"));
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+    });
+}
+
+// i decided to move the default endpoint to /api so that i could serve
+// the react app directly from express. hope that's ok!
+app.get('/api', async (req, res) => {
     // convert the params just to check if they are valid or not
     const latitude  = Number.parseFloat(req.query.lat);
     const longitude = Number.parseFloat(req.query.lon);
